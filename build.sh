@@ -1,0 +1,25 @@
+#!/bin/sh
+
+build_push(){
+  docker buildx build  --platform ${ARCHS} -f dgraph.Dockerfile -t ${REGISTRY}/${NAME}:latest  --output=type=registry,registry.insecure=true --push .
+}
+
+helm_build_push(){
+  FN=${NAME}-${VER}.tgz
+  rm ${FN}
+  helm package ./install --version ${VER}
+  curl --data-binary "@${FN}" http://helm.alexstorm.solenopsys.org/api/charts
+}
+
+REGISTRY=registry.alexstorm.solenopsys.org
+NAME=solenopsys-spn
+ARCHS="linux/amd64"
+VER=0.1.5
+
+helm_build_push
+#build_push
+
+
+
+
+
