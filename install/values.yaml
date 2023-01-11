@@ -1,0 +1,23 @@
+replicasCount: 1
+fullName: "solenopsys-spn"
+selectorLabel: "solenopsys-spn"
+
+service:
+  tendermintPort: 26657
+  blockchainApiPort: 1317
+  tokenFaucetPort: 4500
+
+storage:
+  volumeName: spn-volume
+  volumeClimeName: spn-pvc
+  storageSize: 1Gi
+  accessModes: "ReadWriteOnce"
+  hostPath: "/opt/spn-volume"
+  storageClass: "local-path"
+
+containers:
+  spn_node:
+    name: spn
+    image: registry.alexstorm.solenopsys.org/spn:latest
+    pullPolicy: IfNotPresent
+

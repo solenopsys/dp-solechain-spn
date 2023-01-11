@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name:  {{ .Values.fullName}}
+  labels:
+    app: {{ .Values.selectorLabel }}
+spec:
+  type: NodePort
+  ports:
+    - port: {{ .Values.service.tendermintPort }}
+      targetPort: {{ .Values.service.tendermintPort }}
+      nodePort: 36657
+      name: tendermint
+    - port: {{ .Values.service.blockchainApiPort }}
+      targetPort: {{ .Values.service.blockchainApiPort }}
+      nodePort: 31317
+      name: api
+    - port: {{ .Values.service.tokenFaucetPort }}
+      targetPort: {{ .Values.service.tokenFaucetPort }}
+      name: faucet
+      nodePort: 4500
+  selector:
+    app: {{ .Values.selectorLabel }}
+
+

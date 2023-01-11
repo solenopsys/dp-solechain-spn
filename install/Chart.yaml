@@ -1,0 +1,8 @@
+apiVersion: v2
+name: solenopsys-spn
+version: 0.1.0
+description: SPN Service
+icon: "http://alexstorm.solenopsys.org/apps/assets/spn.svg"
+
+
+

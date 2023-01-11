@@ -9,5 +9,5 @@ COPY --from=CLONE /temp/spn /spn
 WORKDIR /spn
 USER root
 RUN chmod -R 777 /spn/go.mod
-RUN ignite chain init
-CMD [  "chain","serve" ]
+RUN ignite chain build
+CMD [  "chain","serve","--skip-proto" ]
