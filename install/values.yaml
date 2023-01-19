@@ -1,6 +1,6 @@
 replicasCount: 1
-fullName: "solenopsys-spn"
-selectorLabel: "solenopsys-spn"
+fullName: "solechain-spn"
+selectorLabel: "solechain-spn"
 
 service:
   tendermintPort: 26657
@@ -18,6 +18,6 @@ storage:
 containers:
   spn_node:
     name: spn
-    image: registry.alexstorm.solenopsys.org/spn:latest
+    image: registry.solenopsys.org/solechain-spn:latest
     pullPolicy: IfNotPresent
 

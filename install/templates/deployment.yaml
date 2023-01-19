@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name:  {{ .Values.fullName }}
+  namespace: platform
 spec:
   serviceName:  {{ .Values.fullName }}
   replicas: 1
@@ -16,6 +17,7 @@ spec:
     spec:
       containers:
         - name: {{ .Values.containers.spn_node.name }}
+          tty: true
           image: {{ .Values.containers.spn_node.image }}
           imagePullPolicy:  {{ .Values.containers.spn_node.pullPolicy }}
           ports:
@@ -27,11 +29,12 @@ spec:
               name: faucet
           volumeMounts:
             - name: {{ .Values.storage.volumeName }}
-              mountPath: /storage
+              mountPath: ~/.mychain
           command:
+            - ignite
             - chain
-            - serv
-            - --home /storage
+            - serve
+            # --home /storage
       terminationGracePeriodSeconds: 60
       volumes:
         - name: {{ .Values.storage.volumeName }}

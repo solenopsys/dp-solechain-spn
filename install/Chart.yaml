@@ -1,8 +1,8 @@
 apiVersion: v2
-name: solenopsys-spn
+name: solechain-spn
 version: 0.1.0
 description: SPN Service
-icon: "http://alexstorm.solenopsys.org/apps/assets/spn.svg"
+icon: "http://solenopsys.org/apps/assets/spn.svg"
 
 
 
