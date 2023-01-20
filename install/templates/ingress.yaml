@@ -2,11 +2,9 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: spn-ingress
-  annotations:
-    nginx.ingress.kubernetes.io/configmap: "ingress-config"
 spec:
   rules:
-    - host: spn.$(BASE_DOMAIN)
+    - host: spn.solenopsys.org
       ports:
         - name: rpc
           port: {{ .Values.service.rpcPort }}
