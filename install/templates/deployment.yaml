@@ -25,8 +25,10 @@ spec:
               name: tendermint
             - containerPort:  {{ .Values.service.blockchainApiPort }}
               name: api
-            - containerPort:  {{ .Values.service.tokenFaucetPort }}
-              name: faucet
+            - containerPort:  {{ .Values.service.p2pPort }}
+              name: p2pPort
+            - containerPort:  {{ .Values.service.rpcPort }}
+              name: rpcPort
           volumeMounts:
             - name: {{ .Values.storage.volumeName }}
               mountPath: ~/.mychain

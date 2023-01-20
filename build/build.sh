@@ -14,7 +14,7 @@ helm_build_push(){
 REGISTRY=registry.solenopsys.org
 NAME=solechain-spn
 ARCHS="linux/amd64"
-VER=0.1.0
+VER=0.1.1
 
 helm_build_push
 #build_push
