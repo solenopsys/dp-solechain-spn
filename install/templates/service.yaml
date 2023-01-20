@@ -10,17 +10,17 @@ spec:
   ports:
     - port: {{ .Values.service.tendermintPort }}
       targetPort: {{ .Values.service.tendermintPort }}
-      nodePort: 36657
       name: tendermint
-    - port: {{ .Values.service.blockchainApiPort }}
-      targetPort: {{ .Values.service.blockchainApiPort }}
-      nodePort: 31317
+    - port: {{ .Values.service.p2pPort }}
+      targetPort: {{ .Values.service.p2pPort }}
+      name: p2p
+    - port: {{ .Values.service.rpcPort }}
+      targetPort: {{ .Values.service.rpcPort }}
+      name: rpc
+    - port: { { .Values.service.blockchainApiPort } }
+      targetPort: { { .Values.service.blockchainApiPort } }
       name: api
-    - port: {{ .Values.service.tokenFaucetPort }}
-      targetPort: {{ .Values.service.tokenFaucetPort }}
-      name: faucet
-      nodePort: 4500
+      nodePort: 31317
   selector:
     app: {{ .Values.selectorLabel }}
-
 

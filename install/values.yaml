@@ -3,9 +3,10 @@ fullName: "solechain-spn"
 selectorLabel: "solechain-spn"
 
 service:
-  tendermintPort: 26657
+  rpcPort: 26657
+  tendermintPort: 26660
+  p2pPort: 26656
   blockchainApiPort: 1317
-  tokenFaucetPort: 4500
 
 storage:
   volumeName: spn-volume
