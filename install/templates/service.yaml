@@ -17,8 +17,8 @@ spec:
     - port: {{ .Values.service.rpcPort }}
       targetPort: {{ .Values.service.rpcPort }}
       name: rpc
-    - port: { { .Values.service.blockchainApiPort } }
-      targetPort: { { .Values.service.blockchainApiPort } }
+    - port: {{ .Values.service.blockchainApiPort }}
+      targetPort: {{ .Values.service.blockchainApiPort }}
       name: api
       nodePort: 31317
   selector:

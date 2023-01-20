@@ -1,6 +1,6 @@
 apiVersion: v2
 name: solechain-spn
-version: 0.1.0
+version: 0.1.2
 description: SPN Service
 icon: "http://solenopsys.org/apps/assets/spn.svg"
 

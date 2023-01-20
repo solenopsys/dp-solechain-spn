@@ -9,25 +9,25 @@ spec:
     - host: spn.$(BASE_DOMAIN)
       ports:
         - name: rpc
-          port: { { .Values.service.rpcPort } }
+          port: {{ .Values.service.rpcPort }}
           protocol: TCP
         - name: tendermint
-          port: { { .Values.service.tendermintPort } }
+          port: {{ .Values.service.tendermintPort }}
           protocol: TCP
         - name: p2p
-          port: { { .Values.service.p2pPort } }
+          port: {{ .Values.service.p2pPort }}
           protocol: TCP
   backends:
     - service:
-        name: {{ .Values.fullName}}
+        name: {{ .Values.fullName }}
         port:
           name: rpc
     - service:
-        name: {{ .Values.fullName}}
+        name: {{ .Values.fullName }}
         port:
           name: tendermint
     - service:
-        name: {{ .Values.fullName}}
+        name: {{ .Values.fullName }}
         port:
           name: p2p
 
