@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: build-spn
+spec:
+  template:
+    spec:
+      containers:
+        - name: kaniko
+          image: gcr.io/kaniko-project/executor:latest
+          command:  [
+            "--context", "git://github.com/solenopsys/converged-microservice-solechain-spn-invicta.git",
+            "--context-sub-path", "./",
+            "--dockerfile", "build/Dockerfile",
+            "--destination", "registry.solenopsys.org/solechain-spn:latest",
+            "--force"
+          ]
+          args: []
+      restartPolicy: Never
+  backoffLimit: 1
