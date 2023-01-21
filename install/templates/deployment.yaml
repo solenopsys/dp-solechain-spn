@@ -26,9 +26,9 @@ spec:
             - containerPort:  {{ .Values.service.blockchainApiPort }}
               name: api
             - containerPort:  {{ .Values.service.p2pPort }}
-              name: p2pPort
+              name: p2p
             - containerPort:  {{ .Values.service.rpcPort }}
-              name: rpcPort
+              name: rpc
           volumeMounts:
             - name: {{ .Values.storage.volumeName }}
               mountPath: ~/.mychain
