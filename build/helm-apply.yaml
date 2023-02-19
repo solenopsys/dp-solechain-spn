@@ -6,5 +6,5 @@ metadata:
 spec:
   chart: solechain-spn
   targetNamespace: platform
-  version: 0.1.7
+  version: 0.1.8
   repo: https://helm.solenopsys.org
