@@ -2,6 +2,8 @@ replicasCount: 1
 fullName: "solechain-spn"
 selectorLabel: "solechain-spn"
 
+domain: "spn.solenopsys.org"
+
 service:
   rpcPort: 26657
   tendermintPort: 26660
