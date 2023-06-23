@@ -6,4 +6,8 @@ kubectl apply -f build/build.yaml
 
 ### Build
 
-bash build/build.sh
+
+
+nerdctl build --platform=amd64  --progress=plain --output type=image,name=registry.solenopsys.org/dp-solechain-spn:latest,push=t
+rue .
+
